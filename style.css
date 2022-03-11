@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+:root {
+    --primary: #3586FF;
+    --secondary: #88c0d0;
+    --tertiary: #8fbcbb;
+    --dark: #2e3440;
+    --light-dark-1: #3b4252;
+    --light-dark-2: #434c5e;
+    --light-dark-3: #4c566a;
+    --light: #eceff4;
+    --gray: #d8dee9;
+    --light-gray: #e5e9f0;
+    --red: #bf616a;
+    --orange: #d08770;
+    --yellow: #ebcb8b;
+    --gren: #a3be8c;
+    --purple: #b48ead;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.footer {
+    width: 100%;
+    min-height: 100px;
+    padding: 24px 48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+}
+
+.footer .waves-container .wave {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: url(src/wave.png);
+    background-size: 1240px 124px;
+}
+
+.footer .waves-container .wave#wave1 {
+    z-index: 4;
+    opacity: 1;
+    bottom: 4px;
+    animation: animateWave_01 4s linear infinite;
+}
+
+.footer .waves-container .wave#wave2 {
+    z-index: 3;
+    opacity: 0.5;
+    bottom: 8px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+.footer .waves-container .wave#wave3 {
+    z-index: 2;
+    opacity: 0.2;
+    bottom: 12px;
+    animation: animateWave_01 3s linear infinite;
+}
+
+.footer .waves-container .wave#wave4 {
+    z-index: 1;
+    opacity: 0.7;
+    bottom: 16px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+.footer .social-networks .sn-item .sn-link:hover {
+    transform: translateY(-25%);
+}
+
+.footer .menu .menu-item .menu-link {
+    font-size: 1.2em;
+    color: var(--light);
+    margin: 0 16px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.footer .menu .menu-item .menu-link:hover {
+    opacity: 1;
+}
+
+.footer .social-networks,
+.footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.footer .social-networks .sn-item,
+.footer .menu .menu-item {
+    list-style: none;
+}
+
+.footer .social-networks .sn-item .sn-link {
+    font-size: 2em;
+    color: var(--light);
+    margin: 0 16px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.footer .copy-right {
+    text-align: center;
+    color: var(--light);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* Theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark);
+        color: var(--light);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--light);
+        color: var(--dark);
+    }
+}
+
+/* Animation Waves */
+@keyframes animateWave_01 {
+    0% {
+        background-position-x: 1240px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animateWave_02 {
+    0% {
+        background-position-x: 0px;
+    }
+
+    100% {
+        background-position-x: 1240px;
+    }
+}
